@@ -1,0 +1,325 @@
+:root {
+    --beige: #d1b282;
+    --title: #666666;
+    --text: #828282;
+    --browne: #b07c4d;
+    --line: #c86584;
+    --gray: #eeeeee;
+    --main: #f6f6f6;
+    --btn-bg: linear-gradient(45deg, #b07c4d, #d1b282);
+
+    --btn-hover-bg: linear-gradient(45deg, #d1b282, #b07c4d);
+}
+
+.slider {
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--main);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slider .list .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.slider .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.slider .list .item img:hover {
+    transform: scale(1.1);
+}
+
+.slider .list .item::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, #d1b18263 10%, transparent);
+}
+
+.slider .list .item .content {
+    text-transform: uppercase;
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+    color: var(--text);
+}
+
+.slider .list .item .content p:nth-child(1) {
+    letter-spacing: 20px;
+    color: #828282;
+}
+
+.slider .list .item .content h2 {
+    font-size: 85px;
+
+    color: #5d5d5d;
+}
+
+.slider .list .item.active {
+    opacity: 1;
+    z-index: 10;
+    transform: scale(1.05);
+}
+
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3),
+.slider .list .item.active button {
+    opacity: 0;
+    animation: showContent 1s ease-in-out 1 forwards;
+}
+
+.slider .list .item.active h2 {
+    animation-delay: 0.5s;
+}
+
+.slider .list .item.active p:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.slider .list .item.active button {
+    animation-delay: 1s;
+}
+
+.slider-btn {
+    z-index: 99;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.slider-btn button {
+    background-color: var(--gray);
+    color: var(--beige);
+    width: 40px;
+    height: 35px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    font-size: 22px;
+    padding: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slider-btn button:hover {
+    background-color: var(--beige);
+    color: white;
+}
+
+.content-btn {
+    margin-top: 10px;
+    margin-left: -10px;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+.content-btn button {
+    height: 35px;
+    width: 90px;
+    border: 1px solid rgba(143, 143, 143, 0.571);
+    color: var(--title);
+    background-color: #eeeeee9e;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease,
+    transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideIn 0.5s ease-out forwards,
+    glow 2s ease-in-out infinite alternate;
+    overflow: hidden;
+}
+
+.content-btn a {
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: var(--beige);
+}
+
+.content-btn button:hover {
+    border: none;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.content-btn button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0)
+    );
+    transform: skewX(-25deg);
+    transition: 0.5s;
+    z-index: 0;
+}
+
+.content-btn button:hover::before {
+    left: 100%;
+}
+
+
+.content-btn button span {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes showContent {
+    from {
+    opacity: 0;
+    transform: translate(0, 100px);
+    filter: blur(33px);
+    }
+    to {
+    opacity: 1;
+    transform: translate(0);
+    filter: blur(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+    transform: translateX(-100%);
+    opacity: 0;
+    }
+    100% {
+    transform: translateX(0);
+    opacity: 1;
+    }
+}
+
+@keyframes glow {
+    0% {
+    box-shadow: 0 0 5px var(--title);
+    }
+    100% {
+    box-shadow: 0 0 20px var(--title);
+    }
+}
+
+
+.content-btn button:active {
+    animation: clickEffect 0.3s ease;
+}
+
+@keyframes clickEffect {
+    0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.content-btn button:hover::before {
+    left: 100%;
+}
+
+.content-btn button span {
+    position: relative;
+    z-index: 1;
+}
+
+
+@media (max-width: 576px) {
+    .slider {
+        height: 350px; /* تقليل ارتفاع السلايدر للشاشات الصغيرة جداً جداً */
+    }
+    .slider-btn {
+        bottom: 10px;
+    }
+    .slider-btn button {
+        width: 20px;
+        height: 18px;
+        font-size: 14px;
+    }
+    .slider .list .item .content {
+        font-size: 10px;
+    }
+}
+
+/* تحسين الخطوط والنمط باستخدام Media Queries */
+@media (max-width: 1200px) {
+    .slider .list .item .content h2 {
+        font-size: 7vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .slider .list .item .content h2 {
+        font-size: 6vw;
+    }
+    .content-btn {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider .list .item .content h2 {
+        font-size: 5vw;
+    }
+    .content-btn button {
+        width: 80px;
+        font-size: 14px;
+    }
+    .slider-btn button {
+        width: 35px;
+        height: 30px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .slider .list .item .content h2 {
+        font-size: 4vw;
+    }
+    .content-btn button {
+        width: 40px;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    .slider p {
+        font-size: 10px;
+    }
+    .slider .list .item .content p:nth-child(1){
+        letter-spacing: 10px;
+    }
+}
+
+/* تحسين تباعد وتوسيط العناصر النصية */
+

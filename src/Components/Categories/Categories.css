@@ -1,0 +1,159 @@
+.categories {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 10px;
+  margin: 20px 50px;
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d1b282;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 10px;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  transition: .5s;
+}
+
+.category:hover {
+    color: #b07c4d;
+}
+
+.category-title {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.category:hover::before {
+  transform: scale(1.1);
+}
+
+.bedroom {
+  grid-column: span 4;
+  grid-row: span 2;
+  background-image: url("../../images/Banners/bedroom.webp");
+}
+
+.homeoffice {
+  grid-column: span 2;
+  grid-row: span 0;
+  background-image: url("../../images/Banners/homeoffice.webp");
+}
+
+.livingroom {
+  grid-column: span 2;
+  grid-row: span 0;
+  background-image: url("../../images/Banners/livingroom.webp");
+}
+
+.diningroom {
+  grid-column: span 4;
+  grid-row: span 1;
+  background-image: url("../../images/Banners/diningroom.webp");
+}
+
+/* Media Queries */
+
+/* Large screens */
+@media (max-width: 1200px) {
+  .categories {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 200px);
+  }
+
+  .bedroom {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+
+  .diningroom {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+
+  .homeoffice,
+  .livingroom {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .category {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 768px) {
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 200px);
+  }
+
+  .bedroom,
+  .diningroom {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .homeoffice,
+  .livingroom {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .category {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .categories {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 200px);
+  }
+
+  .bedroom,
+  .diningroom,
+  .homeoffice,
+  .livingroom {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .category {
+    background-size: cover;
+    background-position: center;
+  }
+}

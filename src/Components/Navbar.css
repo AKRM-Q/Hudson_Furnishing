@@ -1,0 +1,255 @@
+/* Navbar.css */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --beige: #d1b282;
+  --title: #666666;
+  --text: #828282;
+  --browne: #b07c4d;
+  --line: #c86584;
+  --gray: #eeeeee;
+  --main: #f6f6f6;
+}
+
+.logo {
+  display: flex;
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.visitor-count {
+  position: absolute;
+  top: 35%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--title);
+  margin-left: 20px;
+}
+
+.navbar {
+  z-index: 999;
+  position: fixed; /* تغيير من sticky إلى fixed */
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  line-height: 10vh;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 0 40px;
+  background-color: var(--main);
+}
+
+ul a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  width: 75%;
+}
+
+.nav-links li {
+  position: relative;
+  color: var(--title);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 20px;
+  margin: 0 10px;
+}
+
+.cart-icon {
+  position: relative;
+  text-decoration: none;
+  color: var(--title);
+  font-size: 24px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: 15px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--beige);
+  color: white;
+  border-radius: 50%;
+  height: 20px;
+  padding: 0 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  background: none;
+  font-size: 20px;
+}
+
+.mobile-menu-icon {
+  display: none;
+}
+
+.nav-links li::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: var(--beige);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.8s ease;
+  color: var(--title);
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+  background: var(--beige);
+}
+
+.nav-links li:hover {
+  transition: 0.8s;
+  color: var(--beige);
+}
+
+.cart-modal {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  width: 80%;
+  max-width: 500px;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.cart-modal h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--title);
+}
+
+.cart-items {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid var(--gray);
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.cart-item-details {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-details p {
+  margin: 0 10px;
+  color: var(--title);
+  font-weight: 500;
+}
+
+.cart-item-details button {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item-details button:hover {
+  background-color: #cc0000;
+}
+
+.cart-modal button {
+  background-color: var(--browne);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: block;
+  margin: 20px auto 0;
+  transition: background-color 0.3s ease;
+}
+
+.cart-modal button:hover {
+  background-color: var(--line);
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 25px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-nav-links {
+    position: absolute;
+    display: block;
+    list-style: none;
+    background-color: var(--mainColor);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    left: 0;
+    top: 10%;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+  }
+
+  ul li {
+    padding: 32px;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+    color: var(--title);
+  }
+
+  .cart-icon {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobile-menu-icon {
+    position: absolute;
+    display: block;
+    right: 20px;
+    cursor: pointer;
+    font-size: 23px;
+    padding: 10px;
+    top: 18px;
+  }
+}

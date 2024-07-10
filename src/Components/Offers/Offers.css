@@ -1,0 +1,63 @@
+.offers {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .offers:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../images/Banners/OfferBanner.webp') no-repeat center center/cover;
+    filter: brightness(0.4);
+    z-index: 0;
+  }
+  
+  .offers-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #d1b282;
+    max-width: 600px;
+  }
+  
+  .offers-content h2 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  
+  .offers-content p {
+    color: #919191;
+    letter-spacing: 5px;
+    font-size: 1.1em;
+    margin: 10px 0 20px;
+  }
+  
+  .offers-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 500;
+    color: #d1b282;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:  0.3s ease;
+  }
+  
+  .offers-button:hover {
+    background: rgba(0, 0, 0, 0.9);
+    color: #b07c4d;
+  }
+  
+
+  

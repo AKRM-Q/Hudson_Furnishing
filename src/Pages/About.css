@@ -1,0 +1,135 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.header-banner {
+    margin-top: 66px;
+    position: relative;
+    width: 100%;
+    height: 35vh;
+    background: url(../images/Banners/Header.webp) no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.header-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.header-banner-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.header-banner-content p {
+    color: #a4a4a4;
+}
+
+.about-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    margin: 5% auto;
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.about-img {
+    flex: 0 50%;
+    max-width: 50%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-img:hover {
+    transform: scale(1.05);
+}
+
+.about-content {
+    flex: 0 50%;
+    padding: 35px;
+    background: #ffffff;
+    transition: background 0.3s ease;
+}
+
+.about-content:hover {
+    background: #e0e0e0;
+}
+
+.about-content h2 {
+    text-transform: uppercase;
+    font-size: 28px;
+    margin: 15px 0;
+    font-family: 'Arial', sans-serif;
+    color: #666666;
+}
+.about-us-donts {
+    margin: 5px ;
+    display: flex;
+    color: #d1b282;
+}
+.about-content p {
+    text-transform: capitalize;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 15px 0;
+    color: #828282;
+    font-family: 'Verdana', sans-serif;
+}
+
+@media (max-width: 1024px) {
+    .header-banner {
+        height: 30vh;
+    }
+    .header-banner-content {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-banner {
+        height: 25vh;
+    }
+    .header-banner-content {
+        font-size: 0.8rem;
+    }
+    .about-us {
+        flex-direction: column;
+    }
+    .about-img {
+        flex: 0 100%;
+        max-width: 100%;
+    }
+    .about-content {
+        flex: 0 100%;
+        max-width: 100%;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-banner {
+        height: 20vh;
+    }
+    .header-banner-content {
+        font-size: 0.6rem;
+    }
+}

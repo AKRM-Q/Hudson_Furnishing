@@ -1,0 +1,107 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-content img {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.modal-content h2 {
+    margin: 20px 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal-content p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+.new-price {
+    color: red;
+    font-weight: 700;
+}
+
+.old-price {
+    text-decoration: line-through;
+}
+
+.modal-content .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.modal-content .star {
+    color: #ffcc00;
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.modal-content .images-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.modal-content .images-container img {
+    width: 80px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.modal-content .images-container img:hover {
+    transform: scale(1.1);
+}
+
+.modal-content .add-to-cart-button {
+    background-color: #d1b282;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-content .add-to-cart-button:hover {
+    background-color: #b07c4d;
+    transform: scale(1.05);
+}

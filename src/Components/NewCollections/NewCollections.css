@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .new-collections {
+    margin: 0 0px;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto; /* تحديث لتكون مرنة مع المحتوى */
+  }
+  
+  .new-collections h1 {
+    color: #666666;
+    font-size: 2.5rem; /* استخدام الوحدات النسبية ليكون متجاوب */
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center; /* مركزة العنوان */
+  }
+  
+  .new-collections hr {
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background-color: #d1b282;
+    margin: 0 auto; /* مركزة الخط */
+    margin-bottom: 15px;
+  }
+  
+  .new-collections-item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .new-collections-item .new-collections-items {
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .new-collections-item .new-collections-items img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .new-collections-item .new-collections-items p {
+    margin: 10px 16px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .new-collections-item .new-collections-item-prices {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px 16px;
+    align-items: center;
+  }
+  
+  .new-collections-item .new-collections-item-price-new {
+    color: #e74c3c;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  .new-collections-item .new-collections-item-price-old {
+    color: #777;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: line-through;
+  }
+  
+  .new-collections-item .new-collections-items:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* وسائل الإعلام للتجاوب */
+  @media (max-width: 600px) {
+    .new-collections h1 {
+      font-size: 2rem;
+    }
+  
+    .new-collections-item .new-collections-items {
+      margin-top: 10px;
+    }
+  }
+  

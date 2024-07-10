@@ -1,0 +1,96 @@
+.news-latter {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+    background: url('../../images/Banners/SubscribeBanner.webp') no-repeat center center/cover;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.news-latter {
+    background-color: rgba(0, 0, 0, 0.89); /* Adjust the 0.5 value to control the darkness */
+    z-index: 99;
+}
+
+.news-latter-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.news-latter-title {
+    color: #d1b282;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.news-latter-text {
+    color: #9d9d9d;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+input[type="email"] {
+    width: 300px;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.subscribe-button {
+    background-color: rgb(33, 31, 31);
+    color: #d1b282;
+    border: none;
+    padding: 14px 28px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.5s ease;
+}
+
+.subscribe-button:hover {
+    background-color: #d1b282;
+    color: rgb(33, 31, 31);
+}
+
+.subscription-message {
+    font-size: 20px;
+    color: #28a745;
+    margin: 20px auto 0;
+    padding: 12px 20px;
+    background-color: #dff0d8;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    max-width: 300px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.subscription-message::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #c3e6cb transparent transparent transparent;
+}

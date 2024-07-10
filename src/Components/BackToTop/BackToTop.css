@@ -1,0 +1,31 @@
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+}
+
+.back-to-top button {
+    background-color: var(--beige);
+    border: none;
+    border-radius: 10px; /* تغيير الزوايا إلى مربعة بدلاً من دائرية */
+    color: white;
+    padding: 10px 15px; /* زيادة الأبعاد قليلاً للحصول على زر أكبر */
+    cursor: pointer;
+    transition: 0.3s ease-in-out, transform 0.2s; /* إضافة تأثير الانتقال */
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+}
+
+.back-to-top button:hover {
+    background-color: var(--browne);
+}
+
+.back-to-top button:focus {
+    outline: none;
+}
+
+.back-to-top button:active {
+    transform: scale(0.95); /* تعديل التأثير عند النقر لتقليل الحجم بدلاً من 0.9 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* زيادة الظل عند النقر */
+}

@@ -1,0 +1,114 @@
+/* GalleryPage.css */
+:root {
+    --primary-color: #d1b282;
+    --secondary-color: #666666;
+    --accent-color: #b07c4d;
+    --light-gray: #eeeeee;
+    --background-color: #f6f6f6;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--background-color);
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.gallery h1::after {
+    content: '';
+    width: 50%;
+    height: 2px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    text-align: center;
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent-color), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin: 15px 0;
+    z-index: 2;
+    position: relative;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px var(--hover-shadow-color);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover::before {
+    opacity: 0.3;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery-item {
+    animation: fadeInUp 0.5s ease-in-out;
+}

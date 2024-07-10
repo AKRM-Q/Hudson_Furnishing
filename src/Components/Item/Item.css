@@ -1,0 +1,126 @@
+/* تنسيق عام */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+
+.popular-items {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.popular-items img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #ddd;
+}
+
+.popular-item-details {
+  padding: 10px 16px;
+  text-align: center;
+}
+
+.popular-items p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.popular-item-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.star {
+  color: #fec978;
+  margin: 0 2px;
+  font-size: 18px;
+}
+
+.popular-item-prices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popular-item-price-new {
+  color: #e74c3c;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.popular-item-price-old {
+  color: #777;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.popular-items:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* تنسيقات إضافية للهوامش والمسافات */
+.popular-items p, .popular-item-prices {
+  margin: 0;
+}
+
+/* وسائل الإعلام للتجاوب */
+@media (max-width: 600px) {
+  .popular-items {
+      max-width: 100%;
+      height: auto;
+  }
+}
+
+/* تنسيقات الأزرار */
+.item-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 7px;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+.icon-button {
+  padding: 10px 20px;
+  background-color: #d1b282;
+  height: 40px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-button svg {
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.icon-button:hover {
+  background-color: #b07c4d;
+  transform: translateY(-2px);
+}
+
+.icon-button:active {
+  transform: translateY(1px);
+}
